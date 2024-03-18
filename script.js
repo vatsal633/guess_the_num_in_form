@@ -1,6 +1,12 @@
 var username = document.getElementById('username')
 var passworld = document.getElementById('password')
 
+var new_username = document.getElementById('new_username')
+var new_password = document.getElementById("new_password")
+
+new_username.style.display = 'none'
+new_password.style.display = 'none'
+
 function check1() {
     if (username.value == 'admin@123' && passworld.value == "vatsal") {
         alert("password is correct")
@@ -11,7 +17,15 @@ function check1() {
         alert("pls enter the password and username ")
     }
 
+    //this block execxute when user enter wrong password or username
+
     else {
+
+        function enterkey(event){
+            if(event.keyCode === 13){
+              check();  
+            }
+        }
 
         document.getElementsByTagName('main')[0].style.display = 'flex'
         let ran_num = Math.floor(Math.random() * 100 + 1)
@@ -20,10 +34,6 @@ function check1() {
 
         document.getElementById('ch').onclick = function check() {
             let user_number = document.getElementById('inp').value
-
-            if(gues == 3){
-                alert
-            }
 
             if (user_number == ran_num) {
                 document.getElementById('ans').innerHTML = "You Guess It Right"
@@ -40,14 +50,24 @@ function check1() {
 
                 let re_button = document.getElementById('btn').innerHTML = "<button>Restart The Game</button>"
 
-                if (username.value == /[^0-9a-zA-Z]/i && passworld.value == /[^0-9a-zA-Z]/i) {
+                username.style.display = 'none'
+                passworld.style.display = 'none'
 
-                    document.getElementById('first').onclick = function ale() {
+                new_username.style.display = 'block'
+                new_password.style.display = 'block'
 
-                        alert("password is correct")
-                    }
+                
+                document.getElementById('first').onclick = function func(){
+                    alert("you have been log in successfully")
+
+                    setTimeout(function(){
+                        document.getElementsByTagName('main')[0].style.display = 'none'
+                    },200)
                 }
-
+    
+                setTimeout(function() {
+                    alert('now you can log in with another username or password');
+                },300);
             }
 
             else if (user_number > 100) {
