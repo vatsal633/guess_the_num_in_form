@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    padding: 0px;
+    margin: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: #4a99f8;
+}
+
+
+main {
+    display: none;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+
+.container {
+    /* border: solid 1px black; */
+    width: 288px;
+    /* text-align: center; */
+    background-color: white;
+    padding: 14px;
+    box-shadow: 0px 0px 7px black;
+    border-radius: 5px;
+    /* transition: 0.5s; */
+}
+
+.container span {
+    text-align: center;
+    display: block;
+    font-size: 17px;
+}
+
+input[type=number] {
+    width: 24%;
+    padding: 12px 7px;
+    text-align: center;
+    border: 0.1px solid #0000008f;
+}
+
+input[type=number]:focus{
+    border: 0.1px solid #0000008f;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 12px;
+}
+
+button {
+    background-color: #4a99f8;
+    color: white;
+    padding: 4px 17px;
+    border: none;
+}
+
+button:hover{
+    cursor:pointer;
+}
+
+input[type=number],button{
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+    transition: 0.5s;
+}
+
+/* #score{
+    color: green;
+    font-size: 23px;
+    font-weight: 600;
+} */
+
+    </style>
+</head>
+
+<body>
+    <input type="text"  id="username" placeholder="enter username" required>
+    <input type="password" id="password" placeholder="enter password" required>
+    <button id="first" onclick="check1()">login</button>
+
+    <main>
+        <div class="container">
+            <span>Guess The Number Between 1 To 100</span>
+            <span id="txt"></span>
+
+            <div class="btns">
+                <input type="number" id="inp" placeholder="number">
+                <button  id="ch">check</button>
+            </div>
+
+            <div>
+                <span id="ans"></span>
+            </div>
+            <div>
+                <span id="trys"></span>
+            </div>
+
+            <div>
+                <span id="score"></span>
+            </div>
+
+            <div id="btn">
+            
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
